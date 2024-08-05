@@ -4,13 +4,23 @@
 = Tutorial <Tutorial>
 #todo[Exclude this chapter!]
 
-Because I have to @cite_todo. This is a abbreviation @oidc explained in the glossary.
+Because I have to @cite_todo. This is the first mention of an abbreviation @oidc explained in the glossary. @feldman_diabetic_2019[pp.110-200]. This is the second mention of an abreviation @oidc.
 
-This template uses the Arial font with size 11pt, a spacing of 1em with a side margin of 2.5cm with a 1cm single sided bounding correction. This can be edited in the `main.typ` file#footnote[This is a footnote.]. If you are looking for how to cite, this sentence is what your are looking for @Bradshaw2012.
+This template uses the Arial font with size 11pt, a spacing of 1em with a side margin of 2.5cm with a 1cm single sided bounding correction. This can be edited in the `main.typ` file#footnote[This is a footnote.]. If you are looking for how to cite, this sentence is what your are looking for @Bradshaw2012[p.101].
+
+This is an example for bullet point list:
+- first entry
+- second entry
+
+Numbered list:
++ first entry
++ second entry
+
+
 == Example for figures
 === Normal Figure
 #lorem(30)
-And this is a reference to this @tag.
+And this is a reference to this @tag. @kuleuven
 #figure(
   image("../images/MissMoneypenny.jpg", width: 60%), caption: flex-caption([This is a #strike[caption] beautiful cat named Miss Moneypenny ],[Picture of Miss Moneypenny (short description of the image for the list of figures)])
 

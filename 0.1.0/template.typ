@@ -34,7 +34,7 @@
 
   
   set page(
-    //numbering: "1",
+    numbering: "1", // this is necessary for the glossary
     //number-align: center,
     margin: (left: 2.5cm+1cm, // binding correction of 1cm for single sided printing
               right: 2.5cm,
@@ -55,7 +55,20 @@
       #if draft [
         DRAFT
       ]
-    ]}
+    ]}, 
+    footer: context [//overwrite numbering
+  #text(size:9pt)[
+    #table(
+      stroke: none,
+      columns:  (1fr, auto, 1fr),
+      align: (left, center, right),
+      inset: 5pt,
+      [],[],[],
+      
+    )
+  ]
+]
+
 )
   
 
@@ -63,7 +76,7 @@
 
 
 
-  set page(numbering: none)
+  
 
 
 

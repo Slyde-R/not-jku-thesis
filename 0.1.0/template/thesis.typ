@@ -2,9 +2,8 @@
 //#import "@preview/not-JKU-thesis:0.1.0": jku-thesis
 
 #import "utils.typ": inwriting, draft, todo, flex-caption, flex-caption-styles
-#import "glossary.typ": glossary
 #import "@preview/glossarium:0.2.6": make-glossary, print-glossary, gls, glspl
-
+#import "glossary.typ": glossary
 #show: make-glossary
 #show: flex-caption-styles
 
@@ -28,7 +27,7 @@
 //#show raw: set text(font: "New Computer Modern Mono", size: 11pt)
 
 #set page(paper: "a4",
-          numbering: "1/1", // this is necessary for the glossary
+          //numbering: "1", // this is necessary for the glossary
           number-align: right,
           margin: (left: 2.5cm+1cm, // binding correction of 1cm for single sided printing
                    right: 2.5cm,
@@ -120,11 +119,11 @@ To everyone who contributed to this thesis, directly or indirectly, I offer my h
 
 
 // Set citation style
-#set cite(style: "iso-690-author-date") // page info visible
+//#set cite(style: "iso-690-author-date") // page info visible, but unlimited authors...
 //#set cite(style: "iso-690-numeric") // page info visible
 //#set cite(style: "springer-basic")// no additional info visible (page number in square brackets)
 //#set cite(style: "alphanumeric")// pag info not visible
-
+#set cite(style: "chicago-author-date") // page info and only one author et al.
 
 // Table stroke
 #set table(stroke: 0.5pt + black)
@@ -142,21 +141,6 @@ To everyone who contributed to this thesis, directly or indirectly, I offer my h
 // color links and references for the final document
 // #show link: set text(fill: blue)
 // #show ref: set text(fill: color.olive)
-
-
-// style table-of-contents
-#show outline.entry.where(
-  level: 1
-): it => {
-  v(1em, weak: true)
-  strong(it)
-}
-
-
-// Draft Settings //
-#show cite: set text(fill: purple) if inwriting // highlight citations 
-#show footnote: set text(fill: purple) if inwriting
-
 // Custom Footer //
 #set page(footer: context [
   #text(size:9pt)[
@@ -172,6 +156,21 @@ To everyone who contributed to this thesis, directly or indirectly, I offer my h
     )
   ]
 ])
+
+// style table-of-contents
+#show outline.entry.where(
+  level: 1
+): it => {
+  v(1em, weak: true)
+  strong(it)
+}
+
+
+// Draft Settings //
+#show cite: set text(fill: purple) if inwriting // highlight citations 
+#show footnote: set text(fill: purple) if inwriting
+#show ref: set text(fill: purple) if inwriting
+
 
 // ------ Content ------
 
@@ -190,7 +189,7 @@ To everyone who contributed to this thesis, directly or indirectly, I offer my h
 // --- Main Chapters ---
 
 
-//#include "content/Tutorial.typ"// Some trivial, but useful snippets
+#include "content/Tutorial.typ"// Some trivial, but useful snippets
 
 #include "content/Introduction.typ"
 
